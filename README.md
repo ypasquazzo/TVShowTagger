@@ -2,7 +2,7 @@
 
 TVShowTagger is a PyQT6 based application designed to automate the renaming of video files, specifically TV shows. It leverages information fetched from "www.epguides.com" and provides a seamless interface for users to match their local TV show episodes with official naming conventions.
 
-![App Screenshot](resources/interface.png)
+![App Screenshot](resources/ui.png)
 
 ## Features
 
