@@ -2,7 +2,7 @@
 
 A PyQT6-based application designed to automate the renaming of TV show episodes by fetching episode details from online databases.
 
-![App Screenshot](path_to_screenshot_if_you_have_one.png)
+![App Screenshot](resources/screenshot.png)
 
 ## Overview
 
