@@ -14,7 +14,7 @@ from interface.info_ui import ShowDetailsWidget
 
 WINDOW_WIDTH = 600
 WINDOW_HEIGHT = 425
-WINDOW_TITLE = "TV SHOW SEEKER"
+WINDOW_TITLE = "TVShowTagger"
 WINDOW_ICON_PATH = '../image/epguides.png'
 TV_SHOWS_JSON_PATH = '../utilities/tv_shows_list.json'
 NO_SERIES_MSG = "No series found. Please refresh list."
