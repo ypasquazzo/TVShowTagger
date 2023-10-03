@@ -71,7 +71,7 @@ def _fetch_synopsis(soup: BeautifulSoup, name: str) -> str:
 
 
 def _fetch_poster(url: str, soup: BeautifulSoup = None) -> bytes:
-    poster_endpoints = ["/cast.jpg", "/logo.jpg"]
+    poster_endpoints = ["cast.jpg", "logo.jpg"]
     for endpoint in poster_endpoints:
         response = get_response(url + endpoint)
         if response.status_code == 200:
@@ -83,7 +83,7 @@ def _fetch_poster(url: str, soup: BeautifulSoup = None) -> bytes:
     imdb = soup.find(class_="center titleblock").find('a')["href"]
     soup = WebQuery.fetch_url_content(imdb, HEADERS)
     poster_url = soup.find(class_="ipc-lockup-overlay ipc-focusable")["href"]
-    soup = WebQuery.fetch_url_content(urljoin(IMDB_URL, poster_url), HEADERS)
+    soup = WebQuery.fetch_url_content(IMDB_URL + poster_url, HEADERS)
     image_url = soup.find_all("img")[1]["src"]
     return get_response(image_url).content
 
