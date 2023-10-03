@@ -1,3 +1,5 @@
 .idea/
-utiities/shows.db
-utiities/tv_shows_list.json
+interface/__pycache__/
+utilities/__pycache__/
+utilities/shows.db
+utilities/tv_shows_list.json
