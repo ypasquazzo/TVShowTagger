@@ -26,9 +26,9 @@ To make it easier for testing and understanding, a simulated folder structure ha
 
 ## Dependencies
 
+- BeautifulSoup
 - PyQt6
-- SQLite (for local storage)
-- Beautifulsoup
+- Requests
 
 ## Project Structure
 

@@ -1,7 +1,6 @@
 import json
 import logging
 import re
-from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
@@ -13,6 +12,15 @@ USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
               "Chrome/81.0.4044.138 Safari/537.36")
 HEADERS = {"User-Agent": USER_AGENT}
 TV_SHOWS_FILE = "../utilities/tv_shows_list.json"
+
+
+def _extract_season_only(s: str) -> str:
+    """Extract the 'Season [nb]' prefix from a given string, where [nb] is a number."""
+    match = re.match(r"(Season \d+)", s)
+    if match:
+        return match.group(1)
+    else:
+        return ""
 
 
 def _remove_invalid_characters(filename: str) -> str:
@@ -97,7 +105,7 @@ def _fetch_episode_data(soup: BeautifulSoup) -> list:
     for r in rows[2:]:
         season = r.find('td', class_='bold')
         if season:
-            data.append(_remove_invalid_characters(season.text.strip()))
+            data.append(_extract_season_only(_remove_invalid_characters(season.text.strip())))
 
         episode = r.find('td', class_='eptitle')
         if episode:
